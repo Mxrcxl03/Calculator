@@ -4,8 +4,10 @@ let currentDisplay = "0"; // The current display content
 let resultDisplay = false; // Flag to track whether the result is displayed
 
 function appendToDisplay(value) {
-    if (currentDisplay === "0" || resultDisplay) {
-      // If the current display is "0" or the result is already displayed, replace it with the new value
+    if (currentDisplay === "0" || resultDisplay && value != "+" && value != "-" && value != "*" && value != "/" ) {
+      // If the current display is "0" or the result is already displayed, replace it with the new value,
+      // If operator, do not
+
       currentDisplay = value;
     } else {
       // Otherwise, concatenate the new value to the current display
@@ -28,10 +30,10 @@ function updateDisplay() {
 function calculateResult() {
     try {
       // Use the eval() function to evaluate the mathematical expression
-      const result = eval(currentDisplay);
+      result = eval(currentDisplay);
   
       // Append the result to the current display, preceded by an equal sign (=)
-      currentDisplay += "\n=" + result.toString();
+      currentDisplay = result.toString();
   
       // Update the calculator display with the result
       updateDisplay();
@@ -48,8 +50,10 @@ function calculateResult() {
 }
 
 function clearLastElement() {
-    // Remove the last character from the current display using the slice() method
-    currentDisplay = currentDisplay.slice(0, -1);
+    // Remove the last character from the current display using the slice() method, if showind number is not a result
+
+    if (resultDisplay === false && currentDisplay != result)
+      currentDisplay = currentDisplay.slice(0, -1);
   
     // If the current display becomes empty, set it back to "0"
     if (currentDisplay === "") {
