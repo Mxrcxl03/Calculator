@@ -39,10 +39,9 @@ function calculateResult() {
       updateDisplay();
     } catch (error) {
       // If there is an error in the expression (e.g., dividing by zero), display an error message
-      currentDisplay += "\nError";
-  
-      // Update the calculator display to show the error message
+      currentDisplay = "\nError";
       updateDisplay();
+
     }
   
     // Set the result display flag to true to indicate that the result is displayed
@@ -59,15 +58,11 @@ function clearLastElement() {
     if (currentDisplay === "") {
       currentDisplay = "0";
     }
-  
-    // Update the calculator display to reflect the changes
     updateDisplay();
 }
 
 function clearDisplay() {
     currentDisplay = "0"; // Reset the current display to "0"
     resultDisplay = false; // Reset the result display flag to false
-  
-    // Update the calculator display to show the cleared content
     updateDisplay();
 }
