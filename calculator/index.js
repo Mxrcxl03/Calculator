@@ -39,7 +39,7 @@ function calculateResult() {
       updateDisplay();
     } catch (error) {
       // If there is an error in the expression (e.g., dividing by zero), display an error message
-      currentDisplay = "\nError";
+      currentDisplay = "\nerror";
       updateDisplay();
 
     }
