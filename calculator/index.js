@@ -2,6 +2,7 @@
 
 let currentDisplay = "0"; // The current display content
 let resultDisplay = false; // Flag to track whether the result is displayed
+let result = '';
 
 function appendToDisplay(value) {
     if (currentDisplay === "0" || resultDisplay && value != "+" && value != "-" && value != "*" && value != "/" ) {
