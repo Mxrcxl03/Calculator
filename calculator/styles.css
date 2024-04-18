@@ -4,6 +4,13 @@ button{
     border-radius: 90px;
     border:none;
 }
-display{
-    height: 100px;
+.display{
+    margin: 5em;
+    border-style:solid;
+}
+#buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
 }
